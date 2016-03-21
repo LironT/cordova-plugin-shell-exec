@@ -17,7 +17,7 @@ public class ShellExec extends CordovaPlugin {
 @Override
 public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
 
-        if (action.equals("exec")) {
+        if (action.equals("exec") || action.equals("su exec")) {
                 Process p;
                 StringBuffer output = new StringBuffer();
                 int exitStatus = 100;
