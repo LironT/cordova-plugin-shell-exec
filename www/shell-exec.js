@@ -7,4 +7,4 @@ function ShellExec() {
   };
 }
 
-window.ShellExec = new ShellExec()
+window.ShellExec = new ShellExec();
