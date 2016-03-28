@@ -1,27 +1,20 @@
-package org.apache.cordova.plugin;
+package org.apache.cordova.ShellExec;
 
-import java.io.IOException;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-
+import android.app.ActivityManager;
+import android.app.ActivityManager.RunningAppProcessInfo;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import org.apache.cordova.CordovaPlugin;
-import org.apache.cordova.CallbackContext;
-
-import android.content.Context;
-import android.app.Activity;
-import android.app.ActivityManager;
-import android.app.ActivityManager.RunningAppProcessInfo;
+import java.io.IOException;
+import java.util.List;
 
 public class ShellExec extends CordovaPlugin {
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
 
-        if (action.equals("exec") || action.equals("su exec")) {
+        if (action.equals("exec")) {
             Process p;
             StringBuffer output = new StringBuffer();
             int exitStatus = 100;
